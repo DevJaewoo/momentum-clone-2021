@@ -8,6 +8,8 @@
     <title>Momentum</title>
   </head>
   <body>
+    <h2 id="clock">00:00</h2>
+
     <form id="login-form">
       <input
         required
@@ -15,24 +17,24 @@
         type="text"
         placeholder="What is your name?"
       />
-      <button>Log In</button>
+      <!-- <button>Log In</button> -->
     </form>
-
-    <h2 id="clock">00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To-Do and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
+
+    <div class="todo">
+      <div class="todo__main hidden">
+        <ul class="todo__list"></ul>
+        <form class="todo__form">
+          <input type="text" placeholder="Enter new To-Do" required />
+        </form>
+      </div>
+      <div class="todo__button">Todo</div>
+    </div>
+
     <div id="quote">
       <span></span>
       <span></span>
     </div>
-
-    <form id="api-form">
-      <input required type="password" placeholder="Please enter your API key" />
-      <button>Submit</button>
-    </form>
     <div id="weather" class="hidden">
       <span></span>
       <span></span>

@@ -1,10 +1,19 @@
-const todoForm = document.querySelector("#todo-form");
+const todoMain = document.querySelector(".todo__main");
+const todoForm = document.querySelector(".todo__form");
 const todoInput = todoForm.querySelector("input");
-const todoList = document.querySelector("#todo-list");
+const todoList = document.querySelector(".todo__list");
+const todoButton = document.querySelector(".todo__button");
 
 let todos = [];
 
 const KEY_TODOS = "todos";
+
+function onTodoToggle(event) {
+  event.preventDefault();
+  todoMain.classList.toggle("hidden");
+}
+
+todoButton.addEventListener("click", onTodoToggle);
 
 function saveToDo() {
   localStorage.setItem(KEY_TODOS, JSON.stringify(todos));
@@ -22,12 +31,16 @@ function insertToDo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
 
+  const input = document.createElement("input");
+  input.type = "checkbox";
+  li.appendChild(input);
+
   const span = document.createElement("span");
   span.innerText = newTodo.text;
   li.appendChild(span);
 
   const button = document.createElement("button");
-  button.innerText = "❌";
+  button.innerText = "x";
   button.addEventListener("click", deleteToDo);
   li.appendChild(button);
 

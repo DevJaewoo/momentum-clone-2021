@@ -15,7 +15,7 @@ const quotes = [
   },
   {
     quote:
-      "As a general rule, the most successful man in life is the man who has the best information",
+      "As a general rule, the most successful man in life is the man who has the best information.",
     author: "Benjamin Disraeli",
   },
   {
@@ -93,7 +93,7 @@ const quotes = [
   },
   {
     quote:
-      "The dictionary is the only place that success comes before work. Work is the key to success, and hard work can help you accomplish anything",
+      "The dictionary is the only place that success comes before work. Work is the key to success, and hard work can help you accomplish anything.",
     author: "Vince Lombardi",
   },
   {
@@ -128,5 +128,5 @@ const quoteOfToday = quotes[Math.floor(Math.random() * quotes.length)];
 console.log(`Quote: ${quoteOfToday.quote}`);
 console.log(`Author: ${quoteOfToday.author}`);
 
-quote.innerText = quoteOfToday.quote;
+quote.innerText = `\"${quoteOfToday.quote}\"`;
 author.innerText = quoteOfToday.author;
